@@ -62,7 +62,7 @@ We do not guarantee:
 We may modify these terms at any time. Continued use after changes constitutes acceptance of new terms.
 
 ## 10. Support
-- Community support is available through [support channel]
+- Community support is available at anaplansheetsconnector.help@gmail.com
 - No guaranteed response times for free users
 - Enterprise support available upon request
 
@@ -73,7 +73,7 @@ These terms are governed by the laws of [Your Jurisdiction], without regard to c
 These Terms constitute the entire agreement between you and the Add-on developers regarding the use of this service.
 
 ## Contact Information
-For questions about these Terms, contact: [your-email@company.com]
+For questions about these Terms, contact: anaplansheetsconnector.help@gmail.com
 
 ---
 By using the Anaplan Sheet Connector, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.

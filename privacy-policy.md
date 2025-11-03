@@ -56,7 +56,7 @@ This add-on complies with the [Google API Services User Data Policy](https://dev
 We may update this policy. Changes will be posted with a new "Last Updated" date.
 
 ## Contact
-For privacy concerns, contact: [your-email@company.com]
+For privacy concerns, contact: anaplansheetsconnector.help@gmail.com
 
 ## Compliance
 This add-on complies with:

@@ -19,7 +19,7 @@ Anaplan Sheet Connector is a Google Workspace Add-on that enables seamless integ
 
 ## Support
 
-For support, please contact: [your-email@company.com]
+For support, please contact: anaplansheetsconnector.help@gmail.com
 
 ## Installation
 
