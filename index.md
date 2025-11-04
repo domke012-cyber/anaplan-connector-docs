@@ -12,10 +12,12 @@ Connect Anaplan models to Google Sheets™ for automated data synchronization an
 Anaplan Connector for Sheets™ is a Google Workspace™ Add-on that enables seamless integration between Anaplan and Google Sheets™.
 
 ### Features
-- 📊 Export Anaplan views to Google Sheets™
-- 🔄 Automated scheduled exports  
-- 🎯 Advanced filter management
-- 🤖 AI-powered data analysis
+- 📊 Export Anaplan data to Google Sheets™ (exports & saved views)
+- 🔄 Automated scheduled refreshes (daily, weekly, hourly)
+- 🎯 Advanced page selectors for dimensional filtering
+- 🌐 Multi-model support (multiple Anaplan models per spreadsheet)
+- 🎨 One-click sheet formatting
+- 🔐 Dual authentication (OAuth/SSO & Basic Auth)
 
 ## Support
 
