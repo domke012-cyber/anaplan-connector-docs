@@ -7,6 +7,10 @@ Connect Anaplan models to Google Sheets™ for automated data synchronization an
 - [Privacy Policy](./privacy-policy)
 - [Terms of Service](./terms-of-service)
 
+## For Google Review Team
+
+- [Testing Guide & Credentials](./testing-guide)
+
 ## About
 
 Anaplan Connector for Sheets™ is a Google Workspace™ Add-on that enables seamless integration between Anaplan and Google Sheets™.
