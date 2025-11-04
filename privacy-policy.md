@@ -1,13 +1,13 @@
-# Privacy Policy for Anaplan Sheet Connector
+# Privacy Policy for Anaplan Connector for Sheets™
 
 **Last Updated: September 2, 2025**
 
 ## Overview
-Anaplan Sheet Connector ("the Add-on") is committed to protecting your privacy. This policy describes how we handle your data when you use our Google Sheets add-on.
+Anaplan Connector for Sheets™ ("the Add-on") is committed to protecting your privacy. This policy describes how we handle your data when you use our Google Sheets™ add-on.
 
 ## Information We Access
 The Add-on accesses:
-- **Google Sheets Data**: Only the spreadsheets where you explicitly install and use the add-on
+- **Google Sheets™ Data**: Only the spreadsheets where you explicitly install and use the add-on
 - **Anaplan Credentials**: Your Anaplan authentication tokens (stored securely in Google's Properties Service)
 - **User Email**: Used only for sending scheduled export notifications (if enabled by you)
 
@@ -20,7 +20,7 @@ The Add-on accesses:
 ## How We Use Information
 We use your information solely to:
 - Authenticate with Anaplan on your behalf
-- Execute data exports from Anaplan to Google Sheets
+- Execute data exports from Anaplan to Google Sheets™
 - Run scheduled exports at your specified times
 - Send notification emails about export status (only if enabled)
 
@@ -60,6 +60,10 @@ For privacy concerns, contact: anaplansheetsconnector.help@gmail.com
 
 ## Compliance
 This add-on complies with:
-- Google Workspace Marketplace policies
+- Google Workspace™ Marketplace policies
 - Google API Services User Data Policy
 - OAuth 2.0 security standards
+
+---
+
+**Trademark Attribution**: Google Sheets™ and Google Workspace™ are trademarks of Google LLC

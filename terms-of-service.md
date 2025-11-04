@@ -1,12 +1,12 @@
-# Terms of Service for Anaplan Sheet Connector
+# Terms of Service for Anaplan Connector for Sheets™
 
 **Effective Date: September 2, 2025**
 
 ## 1. Acceptance of Terms
-By installing and using the Anaplan Sheet Connector ("the Add-on"), you agree to these Terms of Service.
+By installing and using the Anaplan Connector for Sheets™ ("the Add-on"), you agree to these Terms of Service.
 
 ## 2. Description of Service
-The Add-on provides automated data synchronization between Anaplan models and Google Sheets, including:
+The Add-on provides automated data synchronization between Anaplan models and Google Sheets™, including:
 - Data export from Anaplan views
 - Scheduled automated exports
 - Filter management for data views
@@ -15,7 +15,7 @@ The Add-on provides automated data synchronization between Anaplan models and Go
 ## 3. User Requirements
 To use this Add-on, you must:
 - Have a valid Google account
-- Have access to Google Sheets
+- Have access to Google Sheets™
 - Have valid Anaplan credentials
 - Have appropriate permissions in Anaplan to access the data you wish to export
 
@@ -76,4 +76,4 @@ These Terms constitute the entire agreement between you and the Add-on developer
 For questions about these Terms, contact: anaplansheetsconnector.help@gmail.com
 
 ---
-By using the Anaplan Sheet Connector, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+By using the Anaplan Connector for Sheets™, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
