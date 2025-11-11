@@ -60,6 +60,10 @@ This comprehensive guide will walk you through everything you need to know to se
 
 1. Open your Google Sheet and navigate to **Extensions > Anaplan Connector > Setup OAuth Client**
 2. The OAuth Setup Wizard will open
+3. Select your role: **IT Administrator** (if you have OAuth credentials) or **End User** (if you need credentials from IT)
+
+![OAuth Setup Wizard welcome screen](screenshots/screenshot-27.png)
+*OAuth Setup Wizard welcome screen - Select your role*
 
 ### 1.2 Configuring Your Anaplan OAuth Client
 
@@ -89,14 +93,31 @@ The wizard requires you to create an OAuth client in your Anaplan tenant first. 
 **Step 3: Enter Client ID in Setup Wizard**
 
 1. Return to the **OAuth Setup Wizard** in Google Sheets
-2. Paste your **Client ID** into the "Client ID" field
-3. If your Anaplan tenant uses client secrets, enter the **Client Secret** in the corresponding field (if available in the wizard)
-4. Click **"Save Configuration"**
+2. If you selected **End User** role, you'll see the credentials input form
+3. Paste your **Client ID** into the "Client ID" field
+4. Enter the **Client Secret** in the corresponding field
+5. Select your **Anaplan Region** from the dropdown
+
+![OAuth credentials input form](screenshots/screenshot-28.png)
+*Enter your Client ID, Client Secret, and select Anaplan Region*
+
+![Validate & Continue button](screenshots/screenshot-29.png)
+*Click "Validate & Continue" to proceed*
+
+6. Click **"Validate & Continue"**
 
 **Step 4: Verify Setup**
 
-1. The wizard will validate your configuration
-2. You'll see a success message: "OAuth client configured successfully"
+1. The wizard will validate your configuration and test the connection to Anaplan
+
+![Verifying connection](screenshots/screenshot-30.png)
+*Verifying connection to Anaplan (this may take a few seconds)*
+
+2. You'll see a success message: "Connection Successful!"
+
+![Connection successful](screenshots/screenshot-31.png)
+*Connection successful - OAuth setup complete!*
+
 3. Your OAuth setup is now complete!
 
 **Troubleshooting:**
