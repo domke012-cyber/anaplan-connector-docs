@@ -7,9 +7,9 @@ Connect Anaplan models to Google Sheets™ for automated data synchronization an
 - [Privacy Policy](./privacy-policy)
 - [Terms of Service](./terms-of-service)
 
-## For Google Review Team
+## User Setup Guide
 
-- [Testing Guide & Credentials](./testing-guide)
+- [Setup and Workflow Instructions](./testing-guide)
 
 ## About
 
