@@ -69,6 +69,18 @@ OAuth/SSO provides the most secure authentication with 90-day token validity, el
 6. Grant the requested permissions when prompted
 7. After authorization, you'll be redirected back to Google Sheets with an authenticated session
 
+![Opening the sidebar (Extensions > Anaplan Connector)](screenshots/screenshot-01.png)
+*Opening the sidebar (Extensions > Anaplan Connector)*
+
+![Selecting SSO/OAuth authentication type](screenshots/screenshot-02.png)
+*Selecting "SSO/OAuth" authentication type*
+
+![Login button and OAuth consent screen](screenshots/screenshot-03.png)
+*Login button and OAuth consent screen*
+
+![Successfully authenticated state](screenshots/screenshot-04.png)
+*Successfully authenticated state*
+
 **Success!** Once authenticated, your OAuth token is valid for 90 days. The connector will automatically refresh it when needed - you won't need to log in again unless you explicitly log out.
 
 ---
@@ -87,6 +99,15 @@ Basic Authentication works with any Anaplan account type, including personal dom
 4. Enter your Anaplan password
 5. Click the **"Login"** button
 6. Wait for authentication to complete
+
+![Selecting Basic Auth authentication type](screenshots/screenshot-05.png)
+*Selecting "Basic Auth" authentication type*
+
+![Entering Anaplan email/password](screenshots/screenshot-06.png)
+*Entering Anaplan email/password*
+
+![Successfully authenticated with Basic Auth](screenshots/screenshot-07.png)
+*Successfully authenticated with Basic Auth*
 
 **Authenticated!** You're now logged in with Basic Authentication. Your credentials are stored securely in Google's UserProperties service and are isolated to your user account.
 
@@ -114,6 +135,9 @@ Anaplan organizes data hierarchically: **Workspaces** contain **Models**, which 
 4. Click the **"Model"** dropdown to see models within that workspace
 5. Select your target model
 
+![Configuration tab expanded](screenshots/screenshot-08.png)
+*Configuration tab expanded*
+
 ---
 
 ### 2.2 Fetching Exports
@@ -134,6 +158,18 @@ Anaplan organizes data hierarchically: **Workspaces** contain **Models**, which 
 4. Select an export from the dropdown
 5. Click **"Save Configuration"**
 6. The current sheet will be configured to pull data from that export
+
+![Fetch Exports button](screenshots/screenshot-09.png)
+*"Fetch Exports" button*
+
+![Export list populated](screenshots/screenshot-10.png)
+*Export list populated*
+
+![Selecting an export](screenshots/screenshot-11.png)
+*Selecting an export*
+
+![Export configured and saved](screenshots/screenshot-12.png)
+*Export configured and saved*
 
 **Export Configured!** Your sheet is now configured to pull data from the selected Anaplan export. You can refresh this data at any time using the Refresh Sheets feature.
 
@@ -158,6 +194,18 @@ Anaplan organizes data hierarchically: **Workspaces** contain **Models**, which 
 5. For each dimension, select the specific item(s) you want to filter by
 6. Click **"Save Configuration"**
 7. The current sheet will be configured with your view and filters
+
+![Fetch Views button](screenshots/screenshot-13.png)
+*"Fetch Views" button*
+
+![Views list with filters/dimensions](screenshots/screenshot-14.png)
+*Views list with filters/dimensions*
+
+![Configuring page selectors (filters)](screenshots/screenshot-15.png)
+*Configuring page selectors (filters)*
+
+![View configured and saved](screenshots/screenshot-16.png)
+*View configured and saved*
 
 **View Configured!** Your sheet is now configured to pull filtered data from the selected Anaplan saved view. Each time you refresh, the data will update with your specified filters applied.
 
@@ -188,6 +236,9 @@ The Refresh Sheets interface provides a centralized view of all your configured 
 3. Sheets are grouped by their source Anaplan model (if using multi-model feature)
 4. Each sheet shows a checkbox for selection and its configuration type (Export or View)
 
+![Refresh Sheets HTML popup](screenshots/screenshot-17.png)
+*Refresh Sheets HTML popup*
+
 ---
 
 ### 3.2 Running a Batch Refresh
@@ -204,6 +255,18 @@ Once you've selected the sheets you want to refresh, the connector handles every
    - **Status Messages:** Real-time updates like "Fetching data", "Writing to sheet", etc.
 4. When complete, you'll see a summary showing how many sheets succeeded
 5. Check your sheets - data is updated and a timestamp appears in cell B1
+
+![Refresh Selected button clicked](screenshots/screenshot-18.png)
+*"Refresh Selected" button clicked*
+
+![Progress indicators (batch X/Y, sheet progress bars)](screenshots/screenshot-19.png)
+*Progress indicators (batch X/Y, sheet progress bars)*
+
+![Completion summary (X/Y succeeded)](screenshots/screenshot-20.png)
+*Completion summary (X/Y succeeded)*
+
+![Updated sheet with timestamp in B1](screenshots/screenshot-21.png)
+*Updated sheet with timestamp in B1*
 
 **Expected Performance:**
 - Small datasets (< 5,000 cells): 2-4 seconds
@@ -248,6 +311,21 @@ Schedules use Google Apps Script time-based triggers to automatically refresh yo
 4. Enter your email address for notifications
 5. Click **"Create Schedule"**
 6. Confirm the schedule creation
+
+![Schedule tab expanded](screenshots/screenshot-22.png)
+*Schedule tab expanded*
+
+![Frequency selection dropdown (hourly/daily/weekly/monthly)](screenshots/screenshot-23.png)
+*Frequency selection dropdown (hourly/daily/weekly/monthly)*
+
+![Time/day configuration](screenshots/screenshot-24.png)
+*Time/day configuration*
+
+![Email notification setup](screenshots/screenshot-25.png)
+*Email notification setup*
+
+![Create Schedule confirmation](screenshots/screenshot-26.png)
+*"Create Schedule" confirmation*
 
 **Time Zone Notice:** Schedules run in your Google account's time zone. Make sure your Google account time zone settings match your intended schedule time zone.
 
