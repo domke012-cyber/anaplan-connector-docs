@@ -22,34 +22,95 @@ This comprehensive guide will walk you through everything you need to know to se
 
 ## Table of Contents
 
-1. [Authentication Setup](#1-authentication-setup)
-   - [OAuth/SSO Authentication (Recommended)](#11-oauthsso-authentication-recommended)
-   - [Basic Authentication (Alternative)](#12-basic-authentication-alternative)
-2. [Configuration - Connecting to Anaplan](#2-configuration---connecting-to-anaplan)
-   - [Workspace & Model Selection](#21-workspace--model-selection)
-   - [Fetching Exports](#22-fetching-exports)
-   - [Fetching Saved Views](#23-fetching-saved-views)
-3. [Refresh Sheets - Batch Data Updates](#3-refresh-sheets---batch-data-updates)
-   - [Understanding the Refresh Sheets Interface](#31-understanding-the-refresh-sheets-interface)
-   - [Running a Batch Refresh](#32-running-a-batch-refresh)
-4. [Scheduling - Automated Refreshes](#4-scheduling---automated-refreshes)
-   - [Creating a Schedule](#41-creating-a-schedule)
-   - [Managing Schedules](#42-managing-schedules)
-5. [Quick Actions - Formatting & Cloning](#5-quick-actions---formatting--cloning)
-   - [Format Configured Sheets](#51-format-configured-sheets)
-   - [Clone Workbook with Configurations](#52-clone-workbook-with-configurations)
-6. [Dark Mode](#6-dark-mode)
-7. [Multi-Model Support (Advanced)](#7-multi-model-support-advanced)
-8. [Troubleshooting & FAQs](#8-troubleshooting--faqs)
-9. [Technical Details](#9-technical-details-appendix)
+1. [OAuth Setup Wizard (First-Time Setup)](#1-oauth-setup-wizard-first-time-setup)
+   - [Accessing the Setup Wizard](#11-accessing-the-setup-wizard)
+   - [Configuring Your Anaplan OAuth Client](#12-configuring-your-anaplan-oauth-client)
+2. [Authentication Setup](#2-authentication-setup)
+   - [OAuth/SSO Authentication (Recommended)](#21-oauthsso-authentication-recommended)
+   - [Basic Authentication (Alternative)](#22-basic-authentication-alternative)
+3. [Configuration - Connecting to Anaplan](#3-configuration---connecting-to-anaplan)
+   - [Workspace & Model Selection](#31-workspace--model-selection)
+   - [Fetching Exports](#32-fetching-exports)
+   - [Fetching Saved Views](#33-fetching-saved-views)
+4. [Refresh Sheets - Batch Data Updates](#4-refresh-sheets---batch-data-updates)
+   - [Understanding the Refresh Sheets Interface](#41-understanding-the-refresh-sheets-interface)
+   - [Running a Batch Refresh](#42-running-a-batch-refresh)
+5. [Scheduling - Automated Refreshes](#5-scheduling---automated-refreshes)
+   - [Creating a Schedule](#51-creating-a-schedule)
+   - [Managing Schedules](#52-managing-schedules)
+6. [Quick Actions - Formatting & Cloning](#6-quick-actions---formatting--cloning)
+   - [Format Configured Sheets](#61-format-configured-sheets)
+   - [Clone Workbook with Configurations](#62-clone-workbook-with-configurations)
+7. [Dark Mode](#7-dark-mode)
+8. [Multi-Model Support (Advanced)](#8-multi-model-support-advanced)
+9. [Troubleshooting & FAQs](#9-troubleshooting--faqs)
+10. [Technical Details](#10-technical-details-appendix)
 
 ---
 
-## 1. Authentication Setup
+## 1. OAuth Setup Wizard (First-Time Setup)
+
+**Important:** If you plan to use OAuth/SSO authentication, you must complete this one-time setup first. This configures the OAuth client in your Anaplan tenant and establishes the connection between Google Sheets and Anaplan.
+
+**When to complete this:** Before your first OAuth login (one time per organization)
+
+**Who should do this:** Anaplan administrator with OAuth client management permissions
+
+### 1.1 Accessing the Setup Wizard
+
+1. Open your Google Sheet and navigate to **Extensions > Anaplan Connector > Setup OAuth Client**
+2. The OAuth Setup Wizard will open
+
+### 1.2 Configuring Your Anaplan OAuth Client
+
+The wizard requires you to create an OAuth client in your Anaplan tenant first. Follow these steps:
+
+**Step 1: Get the Redirect URI**
+
+1. In the Setup Wizard, you'll see a **Redirect URI** displayed
+2. **Copy this URL** - you'll need it for your Anaplan OAuth client configuration
+3. Example format: `https://script.google.com/macros/d/{SCRIPT_ID}/usercallback`
+
+**Step 2: Create OAuth Client in Anaplan**
+
+1. Log into your **Anaplan tenant** as an administrator
+2. Navigate to **Administration > OAuth Clients**
+3. Click **"Create OAuth Client"** or **"New Client"**
+4. Configure the OAuth client with these settings:
+   - **Name**: "Google Sheets Connector" (or your preferred name)
+   - **Grant Type**: Authorization Code
+   - **Redirect URI**: Paste the URI you copied from Step 1
+   - **Scopes**: Select appropriate data access scopes for your use case
+5. **Save the OAuth client**
+6. **Copy the Client ID** - you'll need this in the next step
+
+**Important:** Some Anaplan tenants may require you to also note the **Client Secret**. If your OAuth client configuration provides a client secret, copy it as well.
+
+**Step 3: Enter Client ID in Setup Wizard**
+
+1. Return to the **OAuth Setup Wizard** in Google Sheets
+2. Paste your **Client ID** into the "Client ID" field
+3. If your Anaplan tenant uses client secrets, enter the **Client Secret** in the corresponding field (if available in the wizard)
+4. Click **"Save Configuration"**
+
+**Step 4: Verify Setup**
+
+1. The wizard will validate your configuration
+2. You'll see a success message: "OAuth client configured successfully"
+3. Your OAuth setup is now complete!
+
+**Troubleshooting:**
+- **"Invalid Client ID" error**: Verify you copied the entire Client ID from Anaplan
+- **"Redirect URI mismatch" error**: Ensure the Redirect URI in Anaplan exactly matches the one shown in the wizard
+- **"Access denied" during login**: Check that your Anaplan OAuth client has the correct scopes enabled
+
+---
+
+## 2. Authentication Setup
 
 The Anaplan Connector supports two authentication methods. Choose the one that works best for your organization.
 
-### 1.1 OAuth/SSO Authentication (Recommended)
+### 2.1 OAuth/SSO Authentication (Recommended)
 
 OAuth/SSO provides the most secure authentication with 90-day token validity, eliminating the need to re-enter credentials frequently. This method is recommended for organizational Anaplan accounts.
 
@@ -113,11 +174,11 @@ Basic Authentication works with any Anaplan account type, including personal dom
 
 ---
 
-## 2. Configuration - Connecting to Anaplan
+## 3. Configuration - Connecting to Anaplan
 
 Once authenticated, you need to configure which Anaplan workspace and model you want to connect to, then fetch the exports or saved views you want to use in Google Sheets.
 
-### 2.1 Workspace & Model Selection
+### 3.1 Workspace & Model Selection
 
 Anaplan organizes data hierarchically: **Workspaces** contain **Models**, which contain **Exports** and **Saved Views**. You'll need to select the workspace and model that contains your data.
 
@@ -140,7 +201,7 @@ Anaplan organizes data hierarchically: **Workspaces** contain **Models**, which 
 
 ---
 
-### 2.2 Fetching Exports
+### 3.2 Fetching Exports
 
 **Exports** are pre-configured data extractions from Anaplan. They're typically set up by Anaplan model builders and provide a consistent way to pull specific datasets.
 
@@ -175,7 +236,7 @@ Anaplan organizes data hierarchically: **Workspaces** contain **Models**, which 
 
 ---
 
-### 2.3 Fetching Saved Views
+### 3.3 Fetching Saved Views
 
 **Saved Views** provide more flexibility than exports. They allow you to filter data by dimensions (page selectors) and customize what data you pull.
 
@@ -215,11 +276,11 @@ The connector uses internal Anaplan IDs for page selectors, not display names. A
 
 ---
 
-## 3. Refresh Sheets - Batch Data Updates
+## 4. Refresh Sheets - Batch Data Updates
 
 The Refresh Sheets feature allows you to update multiple configured sheets at once with intelligent batching and progress tracking.
 
-### 3.1 Understanding the Refresh Sheets Interface
+### 4.1 Understanding the Refresh Sheets Interface
 
 The Refresh Sheets interface provides a centralized view of all your configured sheets and allows you to refresh them individually or in batches.
 
@@ -241,7 +302,7 @@ The Refresh Sheets interface provides a centralized view of all your configured 
 
 ---
 
-### 3.2 Running a Batch Refresh
+### 4.2 Running a Batch Refresh
 
 Once you've selected the sheets you want to refresh, the connector handles everything automatically with real-time progress updates.
 
@@ -280,11 +341,11 @@ Batch optimization typically reduces total time by 15-20% compared to sequential
 
 ---
 
-## 4. Scheduling - Automated Refreshes
+## 5. Scheduling - Automated Refreshes
 
 Set up automated schedules to refresh your Anaplan data at regular intervals without manual intervention.
 
-### 4.1 Creating a Schedule
+### 5.1 Creating a Schedule
 
 Schedules use Google Apps Script time-based triggers to automatically refresh your configured sheets and send email notifications with results.
 
@@ -333,7 +394,7 @@ Schedules use Google Apps Script time-based triggers to automatically refresh yo
 
 ---
 
-### 4.2 Managing Schedules
+### 5.2 Managing Schedules
 
 View, edit, and manage all your active schedules from the Schedule section.
 
@@ -359,11 +420,11 @@ View, edit, and manage all your active schedules from the Schedule section.
 
 ---
 
-## 5. Quick Actions - Formatting & Cloning
+## 6. Quick Actions - Formatting & Cloning
 
 Quick Actions provide powerful utilities for managing your Anaplan data in Google Sheets.
 
-### 5.1 Format Configured Sheets
+### 6.1 Format Configured Sheets
 
 Automatically apply professional formatting to all your Anaplan-configured sheets with a single click.
 
@@ -387,7 +448,7 @@ Automatically apply professional formatting to all your Anaplan-configured sheet
 
 ---
 
-### 5.2 Clone Workbook with Configurations
+### 6.2 Clone Workbook with Configurations
 
 Create a complete copy of your workbook while preserving all Anaplan sheet configurations - perfect for templates, backups, or sharing with team members.
 
@@ -422,7 +483,7 @@ Create a complete copy of your workbook while preserving all Anaplan sheet confi
 
 ---
 
-## 6. Dark Mode
+## 7. Dark Mode
 
 The Anaplan Connector includes a beautiful dark mode with iOS-style design, perfect for low-light environments and reducing eye strain.
 
@@ -446,7 +507,7 @@ The Anaplan Connector includes a beautiful dark mode with iOS-style design, perf
 
 ---
 
-## 7. Multi-Model Support (Advanced)
+## 8. Multi-Model Support (Advanced)
 
 Advanced users can configure different sheets in the same workbook to pull data from different Anaplan models - a powerful feature for consolidated reporting.
 
@@ -482,7 +543,7 @@ Sheets configured before the multi-model feature was added may not have stored m
 
 ---
 
-## 8. Troubleshooting & FAQs
+## 9. Troubleshooting & FAQs
 
 ### Common Issues & Solutions
 
@@ -613,7 +674,7 @@ Yes! Schedules run on Google's servers using time-based triggers. You don't need
 
 ---
 
-## 9. Technical Details (Appendix)
+## 10. Technical Details (Appendix)
 
 ### OAuth Scopes Explained
 
